@@ -1,4 +1,4 @@
-[SPOTIFY](https://lovespotify.github.io/) | [DATA COLLECTION](https://lovespotify.github.io/data) | EXPLORATORY DATA ANALYSIS | MODEL | CONCLUSION
+[SPOTIFY](https://lovespotify.github.io/) | [DATA COLLECTION](https://lovespotify.github.io/data) | [EXPLORATORY DATA ANALYSIS](https://lovespotify.github.io/eda) | MODEL | CONCLUSION
 
 # Spotify Made Personal
 
