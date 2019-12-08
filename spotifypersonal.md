@@ -1,5 +1,5 @@
-layout: page
-title: "Spotify Made Personal"
-permalink: https://lovespotify.github.io/spotify-personal
+# Spotify Made Personal
 
-hello again
+## Team 72: Michelle Chen, Rita Cui, Cathy Wang, Allison Zhang
+
+CS 109a Fall 2019
