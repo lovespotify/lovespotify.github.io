@@ -1,8 +1,3 @@
----
-title: Spotify Made Personal
-filename: spotify.md
----
-
 # Spotify Made Personal
 
 ## Team 72: Michelle Chen, Rita Cui, Cathy Wang, Allison Zhang
