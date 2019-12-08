@@ -1,7 +1,7 @@
---
+---
 title: Spotify Made Personal
 filename: spotify.md
---
+---
 
 # Spotify Made Personal
 
