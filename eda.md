@@ -1,7 +1,7 @@
 # Exploratory Data Analysis
 
 ## Feature Description and Distribution
-Using the data collected via MillionSongs and the Spotify API, we arrive at a list of features related to the intrinsic audio quality of the song, such as key and aousticness, and features related to non-audio qualities, namely popularity and whether the song is explicit or not. We consider both types of variables as potential features of our final model. Most of the potential features are quantitative variables, with the exeption of explicit, which we later convert to a binary variable.
+Using the data collected via MillionSongs and the Spotify API, we arrive at a list of features related to the intrinsic audio quality of the song, such as key and acousticness, and features related to non-audio qualities, namely popularity and explicitness. We consider both types of variables as potential features of our final model. Most of the potential features are quantitative variables, with the exeption of explicit, which we convert to a binary variable. The complete list of 
 
 *insert image of song.describe() table here and describe any interesting trends*
 
@@ -14,6 +14,4 @@ It was important for us to analyze feature distributions because we have limited
 We were motivated to normalize our features given that the duration varaible was recorded in milliseconds, putting it's values on a scale incomparable with other features. 
 
 ## Feature Relationship
-In carrying out the EDA, we wanted to get a better understanding of the relationship between features. 
-
 In carrying out the EDA, we wanted to get a better understanding of the relationship between features (such as energy, speechiness, and popularity) as predictor variables that contribute to predicting a similarity score. The similarity score was chosen as the output variable for prediction by our baseline model because of its relevance to the goal of this project: to choose similar songs for generating a playlist. We decided not to focus on the lyrics/mood component for the model so far because of the time cost to scrape and save information for such a huge dataset. We cleaned the dataframe to convert categorical variables to quantitative values (such as the “explicit” boolean into 0 and 1) and dropped variables with descriptions that wouldn’t directly contribute (such as “track_name,” “artist_name,” and “track_uri”). 
