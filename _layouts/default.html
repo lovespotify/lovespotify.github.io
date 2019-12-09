@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
-
-    {% if site.google_analytics %}
-      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ site.google_analytics }}');
-      </script>
-    {% endif %}
     <meta charset="UTF-8">
 
 {% seo %}
@@ -25,6 +15,11 @@
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       <a href="https://lovespotify.github.io/" class="btn">Spotify</a>
+      <a href="https://lovespotify.github.io/data" class="btn">Data Collection</a>
+      <a href="https://lovespotify.github.io/eda" class="btn">Exploratory Data Analysis</a>
+      <a href="https://lovespotify.github.io/playlistgeneration" class="btn">Playlist Generation</a>
+      <a href="https://lovespotify.github.io/models" class="btn">Models</a>
+      <a href="https://lovespotify.github.io/conclusions" class="btn">Conclusions</a>
     </header>
 
     <main id="content" class="main-content" role="main">
