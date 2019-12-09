@@ -6,17 +6,13 @@
 
 CS 109a Fall 2019
 
-### Overview
+[hello world](#problem-description-and-motivation)
+
+### Problem Description and Motivation
 
 
 
-### Motivation
-
-
-### Problem Statement
-
-
-### EDA Summary
+### Data Source Description
 
 
 ### Models
