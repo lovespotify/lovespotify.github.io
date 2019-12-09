@@ -5,3 +5,21 @@
 ## Team 72: Michelle Chen, Rita Cui, Cathy Wang, Allison Zhang
 
 CS 109a Fall 2019
+
+### Overview
+
+
+
+### Motivation
+
+
+### Problem Statement
+
+
+### EDA Summary
+
+
+### Models
+
+
+### Conclusions
