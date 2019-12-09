@@ -3,6 +3,7 @@
 [Data Collection](#Data-Collection)
 
 [Million Song](#Million-Song)
+[Spotify API](#Spotify-API)
 
 # Data Collection
 Our four main sources of data are: Million Playlist dataset, Million Song dataset, Spotify API data, and Lyrics Wiki. In the following sections we will describe our data cleaning procedures.
