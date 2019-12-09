@@ -3,10 +3,12 @@ Our four main sources of data are: Million Playlist dataset, Million Song datase
 
 ## Contents
 * [Million Song Dataset](#Million-Song-Dataset)
+* [Million Playlist Dataset] (#Million-Playlist-Dataset)
 * [Spotify API](#Spotify-API)
+* [Lyrics Wiki](#Lyrics-Wiki)
 
 ## Million Song Dataset
-The Million Song dataset consists of close to a million tracks with tags and similarity scores between two tracks (~56 million track pairs), retrieved from the Last.fm API. The format of the dataset is a series of json files, each representing a song and includes similarity information (a list of song IDs for songs that are similar to each other, along with a similarity score of the two songs between 0 and 1, 0 being least similar and 1 most similar) and tags that pertain to the song.
+The Million Song dataset consists of close to a million tracks with tags and similarity scores between two tracks (~56 million track pairs). The format of the dataset is a series of json files, each representing a song and includes similarity information (a list of song IDs for songs that are similar to each other, along with a similarity score of the two songs between 0 and 1, 0 being least similar and 1 most similar) and tags that pertain to the song. Both the tags and the similiarity scores were retrieved from the Last.fm API.
 
 We read the information in the series of json files into
 1. a similarity dataframe, in which each row represents a track pairing and its similarity score
@@ -16,20 +18,31 @@ We read the information in the series of json files into
 A challenge we faced when cleaning the Million Song dataset is reconciling the use of Song ID and Spotify track uri to identify each track. Since Song ID is unique to the Million Song dataset, we used the Spotify API to find the track uri for each song given the title and artist.
 
 Our similarity dataframe looks like this (`artist_name`, `track_name`, and `track_uri` corresponds to the first song, while `song_id` corresponds to the second):
+```python
+similarity.head()
+```
 ![image](https://user-images.githubusercontent.com/16892763/70465217-79d67f00-1a8e-11ea-98c9-9a2135f92f7a.png)
 
 Our song dataframe looks like this:
+```python
+songs.head()
+```
 INSERT SONG DATAFRAME IMAGE
 
 We then scraped the Spotify API (as described in the [Spotify API](#Spotify-API) section) to retrieve audio features (such as danceability, energy, etc.) and track info (such as whether the song has explicit content and how popular it is). Here is the head of our updated song dataframe:
+```python
+songs.head()
+```
 INSERT SONG DATAFRAME WITH SPOTIFY API INFO
 
 We will mainly be using the information gathered for each song in this dataframe as the variable basis for predictions. 
 Given the huge size of the Million Song dataset, we decided to use only the test set of the data, but since the train-test split should be entirely random, this would not bias our modeling results. 
 
+## Million Playlist Dataset
+
 ## Spotify API
 
-
+## Lyrics Wiki
 
 ### Sources
 * **Million Song Dataset:** Thierry Bertin-Mahieux, Daniel P.W. Ellis, Brian Whitman, and Paul Lamere. 
