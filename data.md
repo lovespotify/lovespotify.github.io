@@ -23,13 +23,13 @@ similarity.head()
 ```
 ![image](https://user-images.githubusercontent.com/16892763/70465217-79d67f00-1a8e-11ea-98c9-9a2135f92f7a.png)
 
-Our song dataframe looks like this:
+Our `songs` dataframe looks like this:
 ```python
 songs.head()
 ```
 INSERT SONG DATAFRAME IMAGE
 
-We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) section) to retrieve audio features (such as danceability, energy, etc.) and track info (such as whether the song has explicit content and how popular it is). Here is the head of our updated song dataframe:
+We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) section) to retrieve audio features (such as danceability, energy, etc.) and track info (such as whether the song has explicit content and how popular it is). Here is the head of our updated `songs` dataframe:
 ```python
 songs.head()
 ```
@@ -39,6 +39,9 @@ We mainly use the information gathered for each song in this dataframe as the va
 Given the huge size of the Million Song dataset, we use only the test set of the data, but since the train-test split should be entirely random, this would not bias our modeling results. 
 
 ## Million Playlist Dataset
+The Million Playlist Dataset consists of a list of playlist and the songs that are in each one. We read the csv files into one consolidated dataframe. Here is the head of the `mplaylists` dataframe:
+INSERT MPLAYLISTS DATAFRAME IMAGE
+We ultimated decided to not use the Million Playlist data as a variable in our model because of the low overlap rate between the Million Song and Million Playlist datasets (for example, in a test run with 1000 songs from the Million Song dataset, only 2 were found in the Million Playlist dataset). 
 
 ## Spotify API
 
