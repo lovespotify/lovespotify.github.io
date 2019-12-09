@@ -6,7 +6,7 @@
 
 CS 109a Fall 2019
 
----
+![streaming](https://user-images.githubusercontent.com/58661788/70466232-ae4b3a80-1a90-11ea-807f-1a5ed4126462.png)
 
 ### Problem Description and Motivation
 
