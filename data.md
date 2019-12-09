@@ -3,6 +3,7 @@
 [Data Collection](#Data-Collection)
 
 [Million Song](#Million-Song)
+
 [Spotify API](#Spotify-API)
 
 # Data Collection
