@@ -27,7 +27,7 @@ Our `songs` dataframe looks like this:
 ```python
 songs.head()
 ```
-INSERT SONG DATAFRAME IMAGE
+![image](https://user-images.githubusercontent.com/16892763/70538947-ee61fa00-1b30-11ea-9f87-a6993ffdbc1d.png)
 
 We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) section) to retrieve audio features (such as danceability, energy, etc.) and track info (such as whether the song has explicit content and how popular it is). Here is the head of our updated `songs` dataframe:
 ```python
