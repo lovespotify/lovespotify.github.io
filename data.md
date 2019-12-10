@@ -33,8 +33,8 @@ We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) 
 ```python
 songs.head()
 ```
-![image](https://user-images.githubusercontent.com/16892763/70544744-97f9b900-1b3a-11ea-8442-77344eff6589.png)
-![image](https://user-images.githubusercontent.com/16892763/70544763-9fb95d80-1b3a-11ea-8995-7d09a7a89e4e.png)
+![image](https://user-images.githubusercontent.com/16892763/70545162-2706d100-1b3b-11ea-8299-b178faf794be.png)
+![image](https://user-images.githubusercontent.com/16892763/70545179-2a9a5800-1b3b-11ea-83e5-3c4ddb5d2606.png)
 
 We mainly use the information gathered for each song in this dataframe as the variable basis for predictions. 
 Given the huge size of the Million Song dataset, we use only the test set of the data, but since the train-test split should be entirely random, this would not bias our modeling results. 
