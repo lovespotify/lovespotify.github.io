@@ -64,7 +64,7 @@ The major consideration in fitting a Random Forest model was appropriately tunin
 Given that we purposefully used a wide range of inputs random Grid Search, we were motivated to update our parameters given this new information. Using the new information to narrow down the range of optimal parameters for the final model, we fix the parameters for min_samples_leaf, min_samples_split, max_features, and bootstrap, while varying the depth of the tree and the number of trees. Specifically, we test for possible combinations with max_depths = (10,34,60) and n_estimators = range(35,55). 
 From examining the above combinations of max depth of tree and number of estimators visually, we are able to eliminate max_depth = 10 with any n_estimators we tested for as the best model. 
 
-<img width="1199" alt="randomforest_cv" src="https://user-images.githubusercontent.com/22043162/70595933-9ff53f80-1bb2-11ea-866f-bbd246e44351.png">
+<img width="1199" alt="randomforest_cv" src="https://user-images.githubusercontent.com/22043162/70597276-f748df00-1bb5-11ea-84ee-16132024da33.png">
 
 Running Grid Search over the reamining potential model parameters, we arrive at the following model hyperparameters that gave rise to highest accuracy
 
