@@ -3,8 +3,8 @@ As explained in the Playlist Generate page, the goal of our model is to predict 
 
 Our models work with the differences between features for pairs of songs, as shown below, to predict similarity scores which we intend to use to select songs. 
 
-![diff1](https://user-images.githubusercontent.com/22016387/70591975-0e7fd080-1ba6-11ea-960f-bccb64912ffe.JPG)
-![diff2](https://user-images.githubusercontent.com/22016387/70591976-0f186700-1ba6-11ea-93be-65ff1b8051d3.JPG)
+<img src="https://user-images.githubusercontent.com/22016387/70591975-0e7fd080-1ba6-11ea-960f-bccb64912ffe.JPG" width="700">
+<img src="https://user-images.githubusercontent.com/22016387/70591976-0f186700-1ba6-11ea-93be-65ff1b8051d3.JPG" width="700">
 
 
 ## Contents
@@ -17,9 +17,9 @@ Our models work with the differences between features for pairs of songs, as sho
 ## Linear Regression
 We fit a multiple linear regression model to the training set using the `OLS` function to find a training set R^2 of 0.0051 and testing set R^2 of 0.046. 
 
-![OLS1](https://user-images.githubusercontent.com/22016387/70593061-b8149100-1ba9-11ea-84a9-97780c652a90.JPG?s=10)
-![OLS2](https://user-images.githubusercontent.com/22016387/70593062-b8ad2780-1ba9-11ea-8b54-fd3b3d005248.JPG | width=100)
-![OLS3](https://user-images.githubusercontent.com/22016387/70593063-b8ad2780-1ba9-11ea-8d7b-377d0b65853f.JPG | width=100)
+<img src="https://user-images.githubusercontent.com/22016387/70593061-b8149100-1ba9-11ea-84a9-97780c652a90.JPG" width="500">
+<img src="https://user-images.githubusercontent.com/22016387/70593062-b8ad2780-1ba9-11ea-8b54-fd3b3d005248.JPG" width="500">
+<img src="https://user-images.githubusercontent.com/22016387/70593063-b8ad2780-1ba9-11ea-8d7b-377d0b65853f.JPG" width="500">
 
 Interestingly, the R^2 score of testing set is greater than training set, suggesting that ---------------. The top variables with the greatest magnitudes include "danceability," "duration," and "time signature," around 0.05-0.06, which is very low. Thus, based on the R^2 scores and examination of the coefficients, it appears that there is little correlation between the predictor variables and similarity score. 
 
