@@ -33,6 +33,8 @@ Tony Bennett|spotify:track:6dbKl5pzPue67ttfvYCpK9|spotify:artist:2lolQgalUvZDfp5
 The Cinematic Orchestra|spotify:track:6q4c1vPRZREh7nw3wG7Ixz|spotify:artist:32ogthv0BdaSMPml02X9YB|That Home|spotify:album:5cPHT4yMCfETLRYAoBFcOZ|103920|Ma Fleur
 Shawn Mendes|spotify:track:6wQSrFnJYm3evLsavFeCVT|spotify:artist:7n2wHs1TKAczGzO7Dd2rGr|Never Be Alone|spotify:album:5wKylB0Zwnxz046O7po25D|215813|Handwritten
 
+{% include spotifyPlaylist.html id="4Y12OvK8VOLEumFFBgi5wd" %}
+
 Minimizing the normalized average difference of all the feature values, we arrive at the follow naive recommendation, where each feature column indicates the normalized difference between the song and the base playlist:
 
 Artist_name|track_uri|track_name|release_date|danceability|energy|key|loudness|mode|speechiness|acousticness|instrumentalness|liveness|valence|tempo|duration_ms|time_signature|explicit|popularity|average
