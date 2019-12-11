@@ -5,10 +5,9 @@ Our four main sources of data are: Million Playlist dataset, Million Song datase
 * [Million Song Dataset](#Million-Song-Dataset)
 * [Million Playlist Dataset](#Million-Playlist-Dataset)
 * [Spotify API](#Spotify-API)
-* [Lyrics Wiki](#Lyrics-Wiki)
 
 ## Million Song Dataset
-The Million Song dataset consists of close to a million tracks with tags and similarity scores between two tracks (~56 million track pairs). The format of the dataset is a series of json files, each representing a song and includes similarity information (a list of song IDs for songs that are similar to each other, along with a similarity score of the two songs between 0 and 1, 0 being least similar and 1 most similar) and tags that pertain to the song. Both the tags and the similiarity scores were retrieved from the Last.fm API.
+The [Million Song dataset](http://millionsongdataset.com/lastfm/) consists of close to a million tracks with tags and similarity scores between two tracks (~56 million track pairs). The format of the dataset is a series of json files, each representing a song and includes similarity information (a list of song IDs for songs that are similar to each other, along with a similarity score of the two songs between 0 and 1, 0 being least similar and 1 most similar) and tags that pertain to the song. Both the tags and the similiarity scores were retrieved from the Last.fm API.
 
 We read the information in the series of json files into
 1. a similarity dataframe, in which each row represents a track pairing and its similarity score
@@ -40,9 +39,11 @@ We mainly use the information gathered for each song in this dataframe as the va
 Given the huge size of the Million Song dataset, we use only the test set of the data, but since the train-test split should be entirely random, this would not bias our modeling results. 
 
 ## Million Playlist Dataset
-The Million Playlist Dataset consists of a list of playlist and the songs that are in each one. We read the csv files into one consolidated dataframe. Here is the head of the `mplaylists` dataframe:
+Spotify currently hosts over 2 billion playlists. The [Million Playlist Dataset](https://recsys-challenge.spotify.com) consists of an immense database of one million playlists that have been created by Spotify users and the songs that are in each one. The database consists of a set of csv files, which we read into one consolidated dataframe. Here is the head of the `mplaylists` dataframe:
+
 INSERT MPLAYLISTS DATAFRAME IMAGE
-We ultimated decided to not use the Million Playlist data as a variable in our model because of the low overlap rate between the Million Song and Million Playlist datasets (for example, in a test run with 1000 songs from the Million Song dataset, only 2 were found in the Million Playlist dataset). 
+
+We ultimately decided not to use the Million Playlist data for our model because of the difficulty in consolidating the data from the Million Playlist dataset and the Million Song dataset. In particular, the songs found in the two datasets would often not overlap: in a test run with 1000 songs from the Million Song dataset, only 2 were found in the Million Playlist dataset. Further, our final strategy for our model revolved around similarity scores between songs, which are provided in the Million Songs dataset and not in the Million Playlist dataset.
 
 ## Spotify API
 
@@ -139,8 +140,6 @@ This gives us our new `songs` dataframe:
 ```python
 songs.head()
 ```
-
-## Lyrics Wiki
 
 ### Sources
 * **Million Song Dataset:** Thierry Bertin-Mahieux, Daniel P.W. Ellis, Brian Whitman, and Paul Lamere. 
