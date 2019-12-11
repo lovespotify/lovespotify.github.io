@@ -14,8 +14,7 @@ It is important for us to analyze feature distributions because we have limited 
 ## Normalizing
 We are motivated to normalize our features given a few variables that had very different values than others, including "duration" which appear to be recorded in milliseconds to result in values in 6th order of magnitude, as well as "loudness" which had negative values and "tempo" which were in the hundreds. Normalizing puts all values on a scale that is comparable to other features. Upon normalization, we observe that our data tend toward having high values for energy and loudness. Our data also appears to vary the most widely on acousticness and key, which reflects the highest spread. 
 
-![all_boxplot](https://user-images.githubusercontent.com/22016387/70472340-ebb5c500-1a9c-11ea-8816-39df6d7f6030.png)
-
+![all_boxplot](https://user-images.githubusercontent.com/22016387/70591324-c52e8180-1ba3-11ea-90d4-7fde1ab2c4a7.png)
 
 ## Feature Relationship
 In carrying out the EDA, we want to get a better understanding of the relationship between features (such as energy, speechiness, and popularity) as predictor variables that contribute to predicting a similarity score. The similarity score, a value provided by the original dataset, was chosen as the output variable for prediction by our baseline model because of its relevance to the goal of this project: to choose similar songs for generating a playlist. We decided not to focus on the lyrics/mood component for the model because of the time cost to scrape and save information for such a huge dataset. We cleaned the dataframe to convert categorical variables to quantitative values (such as the “explicit” boolean into 0 and 1) and dropped variables with descriptions that wouldn’t directly contribute (such as “track_name,” “artist_name,” and “track_uri”). 
