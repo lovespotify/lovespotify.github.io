@@ -4,7 +4,7 @@ As explained in the Playlist Generation page, the goal of our model is to predic
 Our models work with the differences between features for pairs of songs, as shown below, to predict similarity scores which we intend to use to select songs. 
 
 <img src="https://user-images.githubusercontent.com/22016387/70591975-0e7fd080-1ba6-11ea-960f-bccb64912ffe.JPG" width="700">
-<img src="https://user-images.githubusercontent.com/22016387/70591976-0f186700-1ba6-11ea-93be-65ff1b8051d3.JPG" width="700">
+<img src="https://user-images.githubusercontent.com/22016387/70591976-0f186700-1ba6-11ea-93be-65ff1b8051d3.JPG" width="600">
 
 
 ## Contents
@@ -63,7 +63,7 @@ The major consideration in fitting a Random Forest model was appropriately tunin
 Given that we purposefully used a wide range of inputs random Grid Search, we were motivated to update our parameters given this new information. Using the new information to narrow down the range of optimal parameters for the final model, we fix the parameters for min_samples_leaf, min_samples_split, max_features, and bootstrap, while varying the depth of the tree and the number of trees. Specifically, we test for possible combinations with max_depths = (10,45,60) and n_estimators = range(35,55). 
 From examining the above combinations of max depth of tree and number of estimators visually, we are able to eliminate max_depth = 10 with any n_estimators we tested for as the best model. 
 
-<img width="1199" alt="randomforest_cv" src="https://user-images.githubusercontent.com/22043162/70597759-2875df00-1bb7-11ea-856e-db130c656ff1.png">
+<img width="1199" alt="randomforest_cv" src="https://user-images.githubusercontent.com/22016387/70649359-f9915480-1c1a-11ea-873e-342ef09e442f.JPG">
 
 Running Grid Search over the reamining potential model parameters, we arrive at the following model hyperparameters that gave rise to highest accuracy
 
