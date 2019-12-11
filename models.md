@@ -40,7 +40,7 @@ We use `LassoCV` function with 100000 iterations, yielding training set and test
 
 We see constant values in predictions for similarity score, and upon looking at the coefficient values, this observation is consistent because the feature selection ability of LASSO regularization reduced the coefficients for all predictors to 0. Unfortunately, this further suggests that there is minimal relationship between predictor variables and similarity score. 
 
-<img src="https://user-images.githubusercontent.com/22016387/70596560-39712100-1bb4-11ea-9860-1bce0eebba77.JPG" width = "400">
+<img src="https://user-images.githubusercontent.com/22016387/70596560-39712100-1bb4-11ea-9860-1bce0eebba77.JPG" width = "600">
 
 ## Decision Trees
 We use the `DecisionTreeRegressor` function to construct decision trees of various depth and compare their cross-validation score performance after 5-fold cross-validation. Similar to the Linear Regression results above, we found no correlation between the predictor variables from Spotify API and the similarity score provided by the Million Song Dataset. Our graph demonstrating the changes in accuracy for different decision tree depths is below:
