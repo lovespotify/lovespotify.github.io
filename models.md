@@ -52,15 +52,15 @@ We can see that while the test accuracy declined and training accuracy increased
 The major consideration in fitting a Random Forest model was appropriately tuning the hyperparameters. In previous homeworks, when encountering tree models, we focused on tuning the maximum depth of the tree and selecting the depth from visualizing resulting CV scores. Due to the multiple hyperparameters that we have to tune, we decided to first use random Grid Search and cross validation to narrow down the range for the most optimal combination, and then visualize CV scores for parameters in that range to decide on the final model. Using random Grid Search, we included parameters that controlled for maximum number of trees, depth, features at each split, samples required to split a node, samples required to split a leaf node, and whether we wanted to Bootstrap or not. We created a wide grid that fitted 5 folds for each 100 candidates, totalling 500 fits. The combination that yeilded the highest CV score was the following.
 
 ```python
-{'n_estimators': 45,
- 'min_samples_split': 2,
- 'min_samples_leaf': 1,
+{'bootstrap': False,
+ 'max_depth': 45,
  'max_features': 'sqrt',
- 'max_depth': 34,
- 'bootstrap': False}
+ 'min_samples_leaf': 1,
+ 'min_samples_split': 5,
+ 'n_estimators': 56}
 ```
 
-Given that we purposefully used a wide range of inputs random Grid Search, we were motivated to update our parameters given this new information. Using the new information to narrow down the range of optimal parameters for the final model, we fix the parameters for min_samples_leaf, min_samples_split, max_features, and bootstrap, while varying the depth of the tree and the number of trees. Specifically, we test for possible combinations with max_depths = (10,34,60) and n_estimators = range(35,55). 
+Given that we purposefully used a wide range of inputs random Grid Search, we were motivated to update our parameters given this new information. Using the new information to narrow down the range of optimal parameters for the final model, we fix the parameters for min_samples_leaf, min_samples_split, max_features, and bootstrap, while varying the depth of the tree and the number of trees. Specifically, we test for possible combinations with max_depths = (10,45,60) and n_estimators = range(35,55). 
 From examining the above combinations of max depth of tree and number of estimators visually, we are able to eliminate max_depth = 10 with any n_estimators we tested for as the best model. 
 
 <img width="1199" alt="randomforest_cv" src="https://user-images.githubusercontent.com/22043162/70597759-2875df00-1bb7-11ea-856e-db130c656ff1.png">
@@ -69,14 +69,14 @@ Running Grid Search over the reamining potential model parameters, we arrive at 
 
 ```python
 {'bootstrap': False,
- 'max_depth': 34,
+ 'max_depth': 60,
  'max_features': 'sqrt',
  'min_samples_leaf': 2,
  'min_samples_split': 2,
- 'n_estimators': 55}
+ 'n_estimators': 45}
 ```
  
-Finally, running a Random Forest model with the above parameters on the training set gave training accuracy of 0.96 and testing set accuracy of 0.12.
+Finally, running a Random Forest model with the above parameters on the training set gave training accuracy of 0.95 and testing set accuracy of 0.19.
 
 
 ## Boosted Trees
