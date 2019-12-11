@@ -18,10 +18,11 @@ We retrieve our data from three different sources: the Million Songs dataset, Mi
 
 ### Models
 
-Our playlist generation involves training a regression model to calculate similarity scores between all of the songs in our dataset and the songs that we provide in our base playlist. We look at accuracy scores of five different models: linear regression model, decision tree, random forest, and boosted tree. More details on how each model was implemented and the resulting output accuracy is provided in [Models](https://lovespotify.github.io/models).
+Our playlist generation involves training a regression model to calculate similarity scores between all of the songs in our dataset and the songs that we provide in our base playlist. We look at five different models: linear regression model, decision tree, random forest, boosted tree, and neural network. More details on how each model was implemented and the resulting output accuracy is provided in [Models](https://lovespotify.github.io/models).
 
 ### Conclusions
 
+We found that tree-based models generally performed the best, with highest testing accuracy given by AdaBoosted trees, followed by our Random Forest model. After examining the performance of our models, we were motivated to create our own similarity score metric to allow for more intuition in how features contribute similarity scores. Under the playlist generation section, we put our models to use and generated recommendations based on real-life playlists found in the Million Playlist Dataset. Moving forward, we would be interested in developing a more rigorous understanding of how features in our dataset are calculated and in incorporating lyrics sentiment analysis into our models.
 
 ### Sources
 
