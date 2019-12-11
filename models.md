@@ -1,5 +1,5 @@
 # Models
-As explained in the Playlist Generate page, the goal of our model is to predict the similarity score between two songs. In the sections below, we present the results from using all of the popular models studied in class: Linear Regression (with LASSO/Ridge regularization), Decision Trees, Random Forests, Boosted Trees, Neural Networks).
+As explained in the Playlist Generation page, the goal of our model is to predict the similarity score between two songs. In the sections below, we present the results from using all of the popular models studied in class: Linear Regression (with LASSO/Ridge regularization), Decision Trees, Random Forests, Boosted Trees, Neural Networks).
 
 Our models work with the differences between features for pairs of songs, as shown below, to predict similarity scores which we intend to use to select songs. 
 
@@ -12,7 +12,6 @@ Our models work with the differences between features for pairs of songs, as sho
 * [Decision Trees](#Decision-Trees)
 * [Random Forests](#Random-Forests)
 * [Boosted Trees](#Boosted-Trees)
-* [Neural Networks](#Neural-Networks)
 
 ## Linear Regression
 We fit a multiple linear regression model to the training set using the `OLS` function to find a training set R^2 of 0.0051 and testing set R^2 of 0.046. 
@@ -122,5 +121,3 @@ print("final test dataset score:", test_score[-1])
 final training dataset score: 0.9397706363490239
 final test dataset score: 0.258275052262645
 ```
-
-## Neural Networks
