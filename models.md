@@ -1,5 +1,11 @@
 # Models
-As explained in the Playlist Generate page, the goal of our model will be to predict the similarity score between two songs. In the sections below, we present the results from using all of the popular models studied in class: Linear Regression (with LASSO/Ridge regularization), Decision Trees, Random Forests, Boosted Trees, Neural Networks).
+As explained in the Playlist Generate page, the goal of our model is to predict the similarity score between two songs. In the sections below, we present the results from using all of the popular models studied in class: Linear Regression (with LASSO/Ridge regularization), Decision Trees, Random Forests, Boosted Trees, Neural Networks).
+
+Our models work with the differences between features for pairs of songs, as shown below, to predict similarity scores which we intend to use to select songs. 
+
+![diff1](https://user-images.githubusercontent.com/22016387/70591975-0e7fd080-1ba6-11ea-960f-bccb64912ffe.JPG)
+![diff2](https://user-images.githubusercontent.com/22016387/70591976-0f186700-1ba6-11ea-93be-65ff1b8051d3.JPG)
+
 
 ## Contents
 * [Linear Regression](#Linear-Regression)
@@ -9,6 +15,13 @@ As explained in the Playlist Generate page, the goal of our model will be to pre
 * [Neural Networks](#Neural-Networks)
 
 ## Linear Regression
+We fit a multiple linear regression model to the training set using the `OLS` function to find a training set R^2 of 0.0051 and testing set R^2 of 0.046. 
+
+
+
+Interestingly, the R^2 score of testing set is greater than training set, suggesting that ---------------. The top variables with the greatest magnitudes include "danceability," "duration," and "time signature," around 0.05-0.06, which is very low. Thus, based on the R^2 scores and examination of the coefficients, it appears that there is little correlation between the predictor variables and similarity score. 
+
+We then try both LASSO and Ridge regularization to improve predictions and help features selection. We use `RidgeCV` function, yielding training set R^2 of 
 
 ## Decision Trees
 We use the `DecisionTreeRegressor` function to construct decision trees of various depth and compare their cross-validation score performance after 5-fold cross-validation. Similar to the Linear Regression results above, we found no correlation between the predictor variables from Spotify API and the similarity score provided by the Million Song Dataset. Our graph demonstrating the changes in accuracy for different decision tree depths is below:
