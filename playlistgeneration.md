@@ -16,6 +16,7 @@ Our approach to the automatic playlist generation problem is as follows:
 
 ## Base Playlist 1
 We select two real-world base playlists from the Million Playlists Dataset. The first of which is as follows:
+
 Artist_name|track_uri|artist_uri|track_name|album_uri|duration_ms|album_name
 ---|---|---|---|---|---|---
 Leon Bridges|spotify:track:0NeJjNlprGfZpeX2LQuN6c|spotify:artist:3qnGvpP8Yth1AqSBMqON5x|River|spotify:album:4svLfrPPk2npPVuI4kXPYg|238560|Coming Home
@@ -88,6 +89,7 @@ Molly Jenson|spotify:track:4bGE62flzKvN09lYlANqRk|Give It Time|0.113636363636363
 
 ## Base Playlist 2
 We repeat the same process for another real-life playlist found in the Million Playlist Dataset:
+
 Artist_name|track_uri|artist_uri|track_name|album_uri|duration_ms|album_name
 ---|---|---|---|---|---|---
 Train|spotify:track:0VZ9xPNa6ROafP6GYYuv2S|spotify:artist:3FUY2gzHeIiaesXtOAdB7A|Marry Me|spotify:album:7tEPbuzTMNGSytEMdezXtS|205453|Save Me, San Francisco (Golden Gate Edition)
