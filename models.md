@@ -21,7 +21,7 @@ We fit a multiple linear regression model to the training set using the `OLS` fu
 <img src="https://user-images.githubusercontent.com/22016387/70593062-b8ad2780-1ba9-11ea-8b54-fd3b3d005248.JPG" width="500">
 <img src="https://user-images.githubusercontent.com/22016387/70593063-b8ad2780-1ba9-11ea-8d7b-377d0b65853f.JPG" width="500">
 
-Interestingly, the R^2 score of testing set is greater than training set, which could be due to bias in the splitting. The top variables with the greatest magnitudes include "danceability," "duration," and "time signature," around 0.05-0.06, which is very low. Thus, based on the R^2 scores and examination of the coefficients, it appears that there is little correlation between the predictor variables and similarity score. 
+Interestingly, the R^2 score of testing set is greater than training set, which could be due to bias in the splitting. The top variables with the greatest magnitudes include `danceability`, `duration`, and `time_signature`, around 0.05-0.06, which is very low. Thus, based on the R^2 scores and examination of the coefficients, it appears that there is little correlation between the predictor variables and similarity score. 
 
 In looking at the similarity score distribution, we see many lowly predicted similarity scores which may make choosing songs for our playlist difficult.
 
