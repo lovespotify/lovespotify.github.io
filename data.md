@@ -28,14 +28,8 @@ songs.head()
 ```
 ![image](https://user-images.githubusercontent.com/16892763/70538947-ee61fa00-1b30-11ea-9f87-a6993ffdbc1d.png)
 
-We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) section) to retrieve audio features (such as danceability, energy, etc.) and track info (such as whether the song has explicit content and how popular it is). Here is the head of our updated `songs` dataframe:
-```python
-songs.head()
-```
-![image](https://user-images.githubusercontent.com/16892763/70545162-2706d100-1b3b-11ea-8299-b178faf794be.png)
-![image](https://user-images.githubusercontent.com/16892763/70545179-2a9a5800-1b3b-11ea-83e5-3c4ddb5d2606.png)
+We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) section) to retrieve audio features (such as danceability, energy, etc.) and track info (such as whether the song has explicit content and how popular it is). We mainly use the information gathered for each song in this dataframe as the variable basis for predictions.
 
-We mainly use the information gathered for each song in this dataframe as the variable basis for predictions. 
 Given the huge size of the Million Song dataset, we use only the test set of the data, but since the train-test split should be entirely random, this would not bias our modeling results. 
 
 ## Million Playlist Dataset
@@ -135,11 +129,13 @@ new_cols = np.append(songs.columns.values,['release_date']+audiofeatures+trackin
 songs = pd.DataFrame(data=songinfo, columns=new_cols)
 ```
 
-This gives us our new `songs` dataframe:
+This gives us our new updated `songs` dataframe:
 
 ```python
 songs.head()
 ```
+![image](https://user-images.githubusercontent.com/16892763/70545162-2706d100-1b3b-11ea-8299-b178faf794be.png)
+![image](https://user-images.githubusercontent.com/16892763/70545179-2a9a5800-1b3b-11ea-83e5-3c4ddb5d2606.png)
 
 ### Sources
 * **Million Song Dataset:** Thierry Bertin-Mahieux, Daniel P.W. Ellis, Brian Whitman, and Paul Lamere. 
