@@ -15,6 +15,13 @@
       max-width: 100%;
     }
 
+    .embed-spotify-list {
+      width: 300px;
+      height: 310px;
+      position: relative;
+      max-width: 100%;
+    }
+
     .embed-spotify-list iframe, .embed-spotify object, .embed-spotify embed {
       position: absolute;
       width: 300px;
@@ -24,6 +31,7 @@
       max-width: 100%;
     }
 </style>
+
 <div class="embed-spotify-list">
     <iframe src="https://open.spotify.com/embed/user/spotify/playlist/{{ include.id }}" 
         frameborder="0" 
