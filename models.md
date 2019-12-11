@@ -30,7 +30,8 @@ In looking at the similarity score distribution, we see many lowly predicted sim
 
 We then try both Lasso and Ridge regularization and cross-validation with a range of alpha values from 0.1 to 100 to improve predictions and help features selection. We use `RidgeCV` function, yielding training set R^2 of 0.0033 and testing set R^2 of 0.
 
-
+<img src="https://user-images.githubusercontent.com/22016387/70594576-02e4d780-1baf-11ea-8ddb-6231682a045b.JPG" width = "500">
+<img src="https://user-images.githubusercontent.com/22016387/70594577-02e4d780-1baf-11ea-8e5e-eea1b22d427e.JPG" width = "500">
 
 We use `LassoCV` function with , yielding training set and testing set R^2 of 0.
 
