@@ -36,7 +36,7 @@ We then try both Lasso and Ridge regularization and cross-validation with a rang
 We use `LassoCV` function with 100000 iterations, yielding training set and testing set R^2 of 0.
 
 <img src="https://user-images.githubusercontent.com/22016387/70596626-5e659400-1bb4-11ea-97cf-21262321e7cd.JPG" width = "400">
-<img src="https://user-images.githubusercontent.com/22016387/70596625-5dccfd80-1bb4-11ea-9b78-ad2e3e3619a0.JPG" width = "400>
+<img src="https://user-images.githubusercontent.com/22016387/70596625-5dccfd80-1bb4-11ea-9b78-ad2e3e3619a0.JPG" width = "400">
 
 We see constant values in predictions for similarity score, and upon looking at the coefficient values, this observation is consistent because the feature selection ability of LASSO regularization reduced the coefficients for all predictors to 0. Unfortunately, this further suggests that there is minimal relationship between predictor variables and similarity score. 
 
