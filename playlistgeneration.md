@@ -3,7 +3,11 @@
 ## Contents
 * [Approach](#Approach)
 * [Base Playlist 1](#Base-Playlist-1)
+  * [Naive Playlist](#Naive-Recommendation-1)
+  * [Boosted Tree Playlist](#Boosted-Tree-Recommendation-1)
 * [Base Playlist 2](#Base-Playlist-2)
+  * [Naive Playlist](#Naive-Recommendation-2)
+  * [Boosted Tree Playlist](#Boosted-Tree-Recommendation-2)
 
 # Approach
 Our approach to the automatic playlist generation problem is as follows: 
@@ -35,7 +39,7 @@ Shawn Mendes|spotify:track:6wQSrFnJYm3evLsavFeCVT|spotify:artist:7n2wHs1TKAczGzO
 
 {% include spotifyPlaylist.html id="4Y12OvK8VOLEumFFBgi5wd" %}
 
-### Naive Recommendation
+### Naive Recommendation 1
 
 Minimizing the normalized average difference of all the feature values, we arrive at the follow naive recommendation, where each feature column indicates the normalized difference between the song and the base playlist. The first 20 songs recommended are shown here:
 
@@ -67,7 +71,7 @@ You can also check out the full recommended playlist:
 
 {% include spotifyPlaylist.html id="3cmQ4zigAypspZtFZ7HM5V" %}
 
-### Boosted Tree Recommendation
+### Boosted Tree Recommendation 1
 
 After training our boosted tree model (explained further in [Models](https://lovespotify.github.io/models)), we use our model to predict the similarity scores of 5000 songs chosen from the Million Song dataset relative to the base playlist. After ranking the scores, we get the top 20 recommendations:
 
@@ -129,7 +133,7 @@ Check out the full base playlist here:
 
 {% include spotifyPlaylist.html id="0cAP05r8Ix6c7PtjGyyLA1" %}
 
-### Naive Recommendation
+### Naive Recommendation 2
 
 Using the same method, we arrive at the naive recommendations (excerpt shown here):
 
@@ -160,7 +164,7 @@ The full 50 recommended playlist:
 
 {% include spotifyPlaylist.html id="43MtvKaZl2aN4RgXbQyOHT" %}
 
-### Boosted Tree Recommendation
+### Boosted Tree Recommendation 2
 
 We use the same method for the boosted tree recommendation (excerpt shown here):
 
