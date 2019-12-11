@@ -34,6 +34,7 @@ The Cinematic Orchestra|spotify:track:6q4c1vPRZREh7nw3wG7Ixz|spotify:artist:32og
 Shawn Mendes|spotify:track:6wQSrFnJYm3evLsavFeCVT|spotify:artist:7n2wHs1TKAczGzO7Dd2rGr|Never Be Alone|spotify:album:5wKylB0Zwnxz046O7po25D|215813|Handwritten
 
 Minimizing the normalized average difference of all the feature values, we arrive at the follow naive recommendation:
+
 Artist_name|track_uri|track_name|release_date|danceability|energy|key|loudness|mode|speechiness|acousticness|instrumentalness|liveness|valence|tempo|duration_ms|time_signature|explicit|popularity|average
 ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
 Vince Gill|spotify:track:55g4K059GVclNmL71tBYgQ|With You|0.01748251748251629|0.08703071672354952|0.11557705826406985|0.0|0.09424786348150008|0.0|0.006075928381962856|0.051148330157457136|0.09556986264339656|0.0074144486692015316|0.06623684571518157|0.09585806206598606|0.02605166604869727|0.0|0.0|0.050434782608695564|0.04457050514013839
