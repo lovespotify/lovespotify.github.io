@@ -47,4 +47,45 @@ We can see that while the test accuracy declined and training accuracy increased
 
 ## Boosted Trees
 
+We use boosted decision trees in another ensemble method to attempt to use multiple decision trees in order to improve our model's performance. Essentially how boosting works is by building a model from the training data, and then building a second model to help correct the errors from the first model. We do so by using the `AdaBoostRegressor` function to build upon our `DecisionTreeRegressor` models. With our boosted trees, we have three main parameters that we want to adjust to produce the best results: the `depth` of each decision tree, the number of `estimators` (that is, the number of trees we want to combine), and the `learning rate`.
+
+To find the optimal values for each of these three parameters, we calculate the accuracy on our training dataset for a set of different values. For the depth of the decision tree, we looked at maximum depths of 6, 8, 10, and 12:
+<img width="1199" alt="boostdepth" src="https://user-images.githubusercontent.com/58661788/70595184-b4d0d380-1bb0-11ea-848f-3474fc4444bb.png">
+
+For the number of estimators to be employed by `AdaBoost`, we looked at 50, 100, 200, and 300 estimators:
+<img width="1199" alt="boostestimators" src="https://user-images.githubusercontent.com/58661788/70595195-be5a3b80-1bb0-11ea-83c4-495ca7e3569e.png">
+
+For the value of the learning rate, we looked at 0.1, 0.3, 0.5, and 1:
+<img width="1201" alt="boostlearningrate" src="https://user-images.githubusercontent.com/58661788/70595208-c914d080-1bb0-11ea-93a9-f3a392f5793d.png">
+
+From the previous plots, we determined that the combination that appeared to give the best results for the test data were boosted trees with depth of 10, 200 estimators, and a learning rate of 0.5:
+```python
+fitted_ada = AdaBoostRegressor(
+        base_estimator=DecisionTreeRegressor(max_depth=10),
+        n_estimators=200,
+        learning_rate=0.5).fit(X_train, y_train)
+train_score = list(fitted_ada.staged_score(X_train, y_train))
+test_score = list(fitted_ada.staged_score(X_test, y_test))
+
+plt.plot(train_score, label='train')
+plt.plot(test_score, label='test')
+plt.xlabel("Iteration")
+plt.ylabel("Accuracy")
+plt.title("Accuracy of AdaBoost as Training Progresses")
+plt.legend()
+plt.show()
+```
+<img width="496" alt="boostfinal" src="https://user-images.githubusercontent.com/58661788/70595216-cf0ab180-1bb0-11ea-8aea-9c5f24e1681e.png">
+
+With these values, our results gave us the accuracy values:
+```python
+print("final training dataset score:", train_score[-1])
+print("final test dataset score:", test_score[-1])
+```
+
+```python
+final training dataset score: 0.9397706363490239
+final test dataset score: 0.258275052262645
+```
+
 ## Neural Networks
