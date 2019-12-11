@@ -14,10 +14,11 @@ Spotify creates and curates their playlists in a complex manner, which involves 
 
 ### Data Source Description
 
-
+We retrieve our data from three different sources: the Million Songs dataset, Million Playlists dataset, and Spotify Web API. Ultimately, our model is trained on the songs from the Million Songs dataset, as well as characteristics of the songs scraped from the Spotify Web API. More details on how the data was extracted, cleaned, and organized is given in [Data Collection](https://lovespotify.github.io/data).
 
 ### Models
 
+Our playlist generation involves training a regression model to calculate similarity scores between all of the songs in our dataset and the songs that we provide in our base playlist. We look at five different models: linear regression model, decision tree, random forest, boosted tree, and neural network. More details on how each model was implemented and the resulting output accuracy is provided in [Models](https://lovespotify.github.io/models).
 
 ### Conclusions
 
