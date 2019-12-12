@@ -1,5 +1,5 @@
 # Models
-As explained in the Playlist Generation page, the goal of our model is to predict the similarity score between two songs. In the sections below, we present the results from using all of the popular models studied in class: Linear Regression (with LASSO/Ridge regularization), Decision Trees, Random Forests, Boosted Trees, Neural Networks).
+As explained in the Playlist Generation page, the goal of our model is to predict the similarity score between two songs. In the sections below, we present the results from using several popular models studied in class: Linear Regression (with LASSO/Ridge regularization), Decision Trees, Random Forests, Boosted Trees).
 
 Our models work with the differences between features for pairs of songs, as shown below, to predict similarity scores which we intend to use to select songs. 
 
