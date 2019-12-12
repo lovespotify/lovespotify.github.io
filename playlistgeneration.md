@@ -37,7 +37,10 @@ Tony Bennett|spotify:track:6dbKl5pzPue67ttfvYCpK9|spotify:artist:2lolQgalUvZDfp5
 The Cinematic Orchestra|spotify:track:6q4c1vPRZREh7nw3wG7Ixz|spotify:artist:32ogthv0BdaSMPml02X9YB|That Home|spotify:album:5cPHT4yMCfETLRYAoBFcOZ|103920|Ma Fleur
 Shawn Mendes|spotify:track:6wQSrFnJYm3evLsavFeCVT|spotify:artist:7n2wHs1TKAczGzO7Dd2rGr|Never Be Alone|spotify:album:5wKylB0Zwnxz046O7po25D|215813|Handwritten
 
+
 {% include spotifyPlaylist.html id="4Y12OvK8VOLEumFFBgi5wd" %}
+
+Listening to the original base playlist, the general trend appears to be relatively slow, more sad songs, all in English. The genres seem to range from ballads to pop, though an interesting thing to note is that several of the songs are actually covers. It would be interesting to see if these trends also appear in our recommended playlists.
 
 ### Naive Recommendation 1
 
@@ -71,6 +74,8 @@ You can also check out the full recommended playlist:
 
 {% include spotifyPlaylist.html id="3cmQ4zigAypspZtFZ7HM5V" %}
 
+Looking through and listening to the songs in this playlist, we indeed see that many of the songs are also in the slow, sadder variety, which seems quite promising. For example, "I Will Always Love You" and "Come What May" seem to be good continuations of songs that were provided in the base playlists. However, we also get some anomalies. "Take Me Back Baby" is entirely jazz, which is a little different, as is "My Little Machine." There are also some songs in a foreign language such as "Ala ta deye tignaye", as well as several songs that are faster and happier.
+
 ### Boosted Tree Recommendation 1
 
 After training our boosted tree model (explained further in [Models](https://lovespotify.github.io/models)), we use our model to predict the similarity scores of 5000 songs chosen from the Million Song dataset relative to the base playlist. After ranking the scores, we get the top 20 recommendations:
@@ -101,6 +106,8 @@ spotify:track:1cybivHbRaM5l08PoBBhzi|Wig Wam|Can't get her (out of my bed)|0.467
 For the full 50 recommended songs in the playlist, check them out here:
 
 {% include spotifyPlaylist.html id="1nRKGUcwXtdixCajvh5Pzy" %}
+
+Now this is where it gets interesting. There are several songs that do fit what we see in the base playlist in this playlist recommended by the boosted tree model, such as "I Was Right" or "Unless the Laker Game Is On." However, the genres and tones in this playlist wildly vary. There are fast rap songs like "Bonus 5", metal songs like "The Coroner", jazz songs, and orchestral instrumentals. There are several foreign songs, and of special interest, ranked relatively high in similarity is Ronald Reagan's First Inaugural Address. We're not sure how these apparently all were highly recommended in terms of similarity score by the boosted tree.
 
 ## Base Playlist 2
 
@@ -133,6 +140,8 @@ Check out the full base playlist here:
 
 {% include spotifyPlaylist.html id="0cAP05r8Ix6c7PtjGyyLA1" %}
 
+This playlist seems a bit more straightforward than the previous base playlist, largely comprised of popular songs generally in the pop category. Most of the songs are relatively slow, and are all in English.
+
 ### Naive Recommendation 2
 
 Using the same method, we arrive at the naive recommendations (excerpt shown here):
@@ -164,6 +173,8 @@ The full 50 recommended playlist:
 
 {% include spotifyPlaylist.html id="43MtvKaZl2aN4RgXbQyOHT" %}
 
+This playlist starts off promisingly. While none of the songs are popular like in the base playlist, the first two songs "It's Time to Let You Go" and "All That I See" seem to be similar to the general vibe of the songs in the base playlist. Again, however, there is a surprising number of foreign songs, as well as some very loud and fast songs like metal. Not exactly what we would have expected given the original base playlist.
+
 ### Boosted Tree Recommendation 2
 
 We use the same method for the boosted tree recommendation (excerpt shown here):
@@ -194,3 +205,5 @@ spotify:track:6WxoBZB1WHpTQ9Y2VSLvuZ|Extol|Undeceived|0.5260609470443142|0.10227
 See all 50 recommended songs here:
 
 {% include spotifyPlaylist.html id="059isqyAkUNjtfM8ZQ8dpz" %}
+
+Listening through this playlist, we can see a dizzying variety of genres from jazz to country and rap, along with many more foreign songs than in the previous playlists. We really could not find a general trend in this playlist that would be able to connect with the base playlist. Unfortunately, this recommended playlist was very lackluster.
