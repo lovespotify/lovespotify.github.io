@@ -33,9 +33,7 @@ We then scrape the Spotify API (as described in the [Spotify API](#Spotify-API) 
 Given the huge size of the Million Song dataset, we use only the test set of the data, but since the train-test split should be entirely random, this would not bias our modeling results. 
 
 ## Million Playlist Dataset
-Spotify currently hosts over 2 billion playlists. The [Million Playlist Dataset](https://recsys-challenge.spotify.com) consists of an immense database of one million playlists that have been created by Spotify users and the songs that are in each one. The database consists of a set of csv files, which we read into one consolidated dataframe. Here is the head of the `mplaylists` dataframe:
-
-INSERT MPLAYLISTS DATAFRAME IMAGE
+Spotify currently hosts over 2 billion playlists. The [Million Playlist Dataset](https://recsys-challenge.spotify.com) consists of an immense database of one million playlists that have been created by Spotify users and the songs that are in each one. The database consists of a set of very large csv files, which we read into one consolidated dataframe.
 
 We ultimately decided not to use the Million Playlist data for our model because of the difficulty in consolidating the data from the Million Playlist dataset and the Million Song dataset. In particular, the songs found in the two datasets would often not overlap: in a test run with 1000 songs from the Million Song dataset, only 2 were found in the Million Playlist dataset. Further, our final strategy for our model revolved around similarity scores between songs, which are provided in the Million Songs dataset and not in the Million Playlist dataset.
 
