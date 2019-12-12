@@ -1,7 +1,13 @@
 # Exploratory Data Analysis
 
-## Feature Description and Distribution
-Using the data collected via MillionSongs, we arrive at a list of features related to the intrinsic audio quality of the song, such as "key" and "acousticness," and features related to non-audio qualities, namely "popularity" and "explicitness." We consider both types of variables as potential features of our final model. Most of the potential features are quantitative variables, with the exception of "explicit," which we converted from True/False to binary values during data cleaning. The basic statistics of the songs show different ranges of values for each feature, as examined in the next section. 
+## Contents
+* [Features](#Features)
+* [Feature Distribution](#Feature-Distribution)
+* [Normalizing](#Normalizing)
+* [Feature Relationship](#Feature-Relationship)
+
+## Features
+Using the data collected via MillionSongs, we arrive at a list of features related to the intrinsic audio quality of the song, such as `key` and `acousticness`, and features related to non-audio qualities, namely `popularity` and `explicitness`. We consider both types of variables as potential features of our final model. Most of the potential features are quantitative variables, with the exception of `explicit`, which we converted from True/False to binary values during data cleaning. The basic statistics of the songs show different ranges of values for each feature, as examined in the next section. 
 
 ![songs-describe1](https://user-images.githubusercontent.com/22016387/70591835-81d51280-1ba5-11ea-8486-14fefe0da527.JPG)
 ![songs-describe2](https://user-images.githubusercontent.com/22016387/70591836-81d51280-1ba5-11ea-8ccb-3b37f5c46ba1.JPG)
@@ -14,18 +20,18 @@ It is important for us to analyze feature distributions because we have limited 
 ![unnormalized_features1](https://user-images.githubusercontent.com/22016387/70591261-826ca980-1ba3-11ea-93ba-aae7d0822908.JPG)
 
 ## Normalizing
-We are motivated to normalize our features given a few variables that had very different values than others, including "duration" which appear to be recorded in milliseconds to result in values in 6th order of magnitude, as well as "loudness" which had negative values and "tempo" which were in the hundreds. Normalizing puts all values on a scale that is comparable to other features. Upon normalization, we observe that our data tend toward having high values for energy and loudness. Our data also appears to vary the most widely on acousticness and key, which reflects the highest spread. 
+We are motivated to normalize our features given a few variables that had very different values than others, including `duration_ms` which appear to be recorded in milliseconds to result in values in 6th order of magnitude, as well as `loudness` which had negative values and `tempo` which were in the hundreds. Normalizing puts all values on a scale that is comparable to other features. Upon normalization, we observe that our data tend toward having high values for energy and loudness. Our data also appears to vary the most widely on acousticness and key, which reflects the highest spread. 
 
 ![all_boxplot](https://user-images.githubusercontent.com/22016387/70591324-c52e8180-1ba3-11ea-90d4-7fde1ab2c4a7.png)
 
 ## Feature Relationship
-In carrying out the EDA, we want to get a better understanding of the relationship between features (such as energy, speechiness, and popularity) as predictor variables that contribute to predicting a similarity score. The similarity score, a value provided by the original dataset, was chosen as the output variable for prediction by our baseline model because of its relevance to the goal of this project: to choose similar songs for generating a playlist. We decided not to focus on the lyrics/mood component for the model because of the time cost to scrape and save information for such a huge dataset. We cleaned the dataframe to convert categorical variables to quantitative values (such as the “explicit” boolean into 0 and 1) and dropped variables with descriptions that wouldn’t directly contribute (such as “track_name,” “artist_name,” and “track_uri”). 
+In carrying out the EDA, we want to get a better understanding of the relationship between features (such as energy, speechiness, and popularity) as predictor variables that contribute to predicting a similarity score. The similarity score, a value provided by the original dataset, was chosen as the output variable for prediction by our baseline model because of its relevance to the goal of this project: to choose similar songs for generating a playlist. We decided not to focus on the lyrics/mood component for the model because of the time cost to scrape and save information for such a huge dataset. We cleaned the dataframe to convert categorical variables to quantitative values (such as the `explicit` boolean into 0 and 1) and dropped variables with descriptions that wouldn’t directly contribute (such as `track_name`, `artist_name`, and `track_uri`). 
 
 First, we graph the values of each predictor variable with each other, creating a scatter matrix. This would allow us to visualize the inter-dependencies among the list of predictors.
 
 ![scattermatrix](https://user-images.githubusercontent.com/22016387/70591243-741e8d80-1ba3-11ea-98e8-1a145e5e388e.png)
 
-We find that there is generally random scatter between variables, suggesting little correlation. The lack of correlation means each variable should have independent contributions to predicting outputs. Exceptions to this seems to appear in positive correlation between "loudness" and "energy," which we are able to address with regularization in our models. For variable intersections where there is less randomness, we see that those variables have discrete values, such as “key,” “time signature,” “mode,” and “explicit,” which still have points in general uniform distributions across the other axis. 
+We find that there is generally random scatter between variables, suggesting little correlation. The lack of correlation means each variable should have independent contributions to predicting outputs. Exceptions to this seems to appear in positive correlation between `loudness` and `energy`, which we are able to address with regularization in our models. For variable intersections where there is less randomness, we see that those variables have discrete values, such as `key`, `time_signature`, `mode`, and `explicit`, which still have points in general uniform distributions across the other axis. 
 
 We were initially interested in only examining entries with a high similarity score (e.g. above 0.9). However, an important finding of the EDA revealed that the distribution of similarity scores is heavily right-skewed, with a low proportion of songs with high similarity scores to each other. This observation, in conjunction with the fact that the sample size for our initial EDA and for the baseline model will be small, as explained above, there would be very few samples that yield a high similarity score. In fact, if we were to randomly select a sample of 1000 songs, only three entries in the similarity data frame correspond to similarity scores over 0.5 for any of the 1000 songs. 
 
